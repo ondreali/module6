@@ -13,6 +13,9 @@ class MyTestCase(unittest.TestCase):
     def test_score_input_test_name(self):
         #only mandatory argument
         self.assertEqual(vf.score_input("English"), "English:0")
+    def test_score_input_score_valid(self):
+        test_score = 77
+        self.assertEqual(vf.score_input("English"), "English:77")
 
 
 if __name__ == '__main__':
