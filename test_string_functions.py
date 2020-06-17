@@ -15,7 +15,10 @@ class MyTestCase(unittest.TestCase):
         message = "Ayah"
         n = 4
         self.assertEqual("AyahAyahAyahAyah", sf.multiple_string(4, "Ayah"))
-
+    def test_multiple_string_hello(self):
+        message = "hello"
+        n = 8
+        self.assertEqual("hellohellohellohellohellohellohellohello", sf.multiple_string(8, "hello"))
 
 
 
