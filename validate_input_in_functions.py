@@ -13,30 +13,33 @@ def score_input(test_name, test_score = 0, invalid_message= 'Please try again'):
     :param test_name: this represents the user's test name
     :param test_score: this represents test score
     :param invalid_message: this represents message if input invalid
-    : return: test_name: test_score
-    : raises keyError: raises an exception
+    :return: test_name: test_score
+    :raises keyError: raises an exception
     """
+#test_name is mandatory
+#test_score is optional, and also default value
     while True:
         try:
-            test_score = int(input("Please enter test score: "))
+            test = test_name
+            score= test_score
             if 0 <= test_score and test_score <= 100:
                 return f'{test_name}:{test_score}'
             else:
                 return f'{test_name}:{test_score}, {invalid_message}'
-        except ValueError:
-            print("Value Error, err!")
+        except ValueError as err:
+            print("Value Error!", err)
             raise ValueError
-
 
 
 if __name__ == '__main__':
     try:
-        test_name = input("Please enter your name:")
+        test_name = input("Please enter your test name:")
         test_score = int(input("Please enter test score: "))
-        invalid_message = "Invalid test score, try again"
+        invalid_message = "Please try again"
     except ValueError as err:
         print("ValueError encountered")
     else:
         print(score_input(test_name, test_score, invalid_message))
+
 
 
