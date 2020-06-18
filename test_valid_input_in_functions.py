@@ -19,7 +19,9 @@ class MyTestCase(unittest.TestCase):
     def test_score_input_below_range(self):
         test_score = -33
         self.assertEqual(vf.score_input("Python", test_score), "Python:-33, Please try again")
-
+    def test_score_input_above_range(self):
+        test_score = 999
+        self.assertEqual(vf.score_input("Python", test_score), "Python:999, Please try again")
 
 if __name__ == '__main__':
     unittest.main()
