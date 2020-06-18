@@ -22,6 +22,14 @@ class MyTestCase(unittest.TestCase):
     def test_score_input_above_range(self):
         test_score = 999
         self.assertEqual(vf.score_input("Python", test_score), "Python:999, Please try again")
+    def test_score_input_above_range(self):
+        #above range
+        test_score = 999
+        self.assertEqual(vf.score_input("Python", test_score), "Python:999, Please try again")
+    def test_score_input_invalid_message(self):
+        #above range
+        test_score = 888
+        self.assertEqual(vf.score_input("Python", test_score, invalid_message="Please try again"), "Python:888, Please try again")
 
 if __name__ == '__main__':
     unittest.main()
