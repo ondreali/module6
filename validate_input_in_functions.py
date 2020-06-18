@@ -21,7 +21,7 @@ def score_input(test_name, test_score = 0, invalid_message= 'Please try again'):
     while True:
         try:
             test = test_name
-            score= test_score
+            score= int(test_score)
             if 0 <= test_score and test_score <= 100:
                 return f'{test_name}:{test_score}'
             else:
@@ -40,6 +40,8 @@ if __name__ == '__main__':
         print("ValueError encountered")
     else:
         print(score_input(test_name, test_score, invalid_message))
+
+
 
 
 
